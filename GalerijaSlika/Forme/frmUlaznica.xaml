@@ -1,0 +1,23 @@
+﻿<Window x:Class="GalerijaSlika.Forme.frmUlaznica"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GalerijaSlika.Forme"
+        mc:Ignorable="d"
+        Title="Dodaj/Izmeni ulaznicu" Height="450" Width="800">
+    <Grid>
+        <Label Content="Datum kupovine:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,20,0,0"/>
+        <Label Content="Cena:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,50,0,0"/>
+        <Label Content="Tip ulaznice:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,80,0,0"/>
+        <Label Content="Korisnik:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,110,0,0"/>
+        <Label Content="Izlozba:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,140,0,0"/>
+        <DatePicker Name="dpDatumKupovine" HorizontalAlignment="Left" Margin="150,20,0,0" VerticalAlignment="Top" Width="120" Height="20"/>
+        <TextBox Name="txtCena"  HorizontalAlignment="Left" Margin="150,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="20"/>
+        <TextBox Name="txtTipUlaznice"  HorizontalAlignment="Left" Margin="150,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="20"/>
+        <ComboBox Name="cbKorisnik"  HorizontalAlignment="Left" Margin="150,110,0,0"  VerticalAlignment="Top" Width="120" Height="20" DisplayMemberPath="ime" SelectedValuePath="korisnikID"  SelectedValue="{Binding korisnikID}"/>
+        <ComboBox Name="cbIzlozba"  HorizontalAlignment="Left" Margin="150,140,0,0" Text="" VerticalAlignment="Top" Width="120" Height="20" DisplayMemberPath="nazivIzlozbe" SelectedValuePath="izlozbaID"  SelectedValue="{Binding izlozbaID}"/>
+        <Button x:Name="btnOtkazi" Content="Otkazi" HorizontalAlignment="Left" Margin="30,200,0,0" VerticalAlignment="Top" Click="btnOtkazi_Click"/>
+        <Button x:Name="btnSacuvaj" Content="Sacuvaj" HorizontalAlignment="Left" Margin="200,200,0,0" VerticalAlignment="Top" Click="btnSacuvaj_Click"/>
+    </Grid>
+</Window>

@@ -1,0 +1,29 @@
+﻿<Window x:Class="GalerijaSlika.Forme.frmSlika"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GalerijaSlika.Forme"
+        mc:Ignorable="d"
+        Title="Dodaj/Izmeni sliku" Height="450" Width="800">
+    <Grid>
+        <Label Content="Naziv slike:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,20,0,0"/>
+        <Label Content="Godina nastanka:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,50,0,0"/>
+        <Label Content="Tehnika:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,80,0,0"/>
+        <Label Content="Dimenzije:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,110,0,0"/>
+        <Label Content="Autor:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,140,0,0"/>
+        <Label Content="Izlozba:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,170,0,0"/>
+        <Label Content="Kategorija:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,200,0,0"/>
+        <TextBox Name="txtNazivSlike"  HorizontalAlignment="Left" Margin="150,20,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="20"/>
+        <TextBox  Name="txtGodinaNastanka" HorizontalAlignment="Left" Margin="150,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="20"/>
+        <TextBox Name="txtTehnika"  HorizontalAlignment="Left" Margin="150,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="20"/>
+        <TextBox Name="txtDimenzije"  HorizontalAlignment="Left" Margin="150,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="20"/>
+        <ComboBox Name="cbAutor"  HorizontalAlignment="Left" Margin="150,140,0,0" VerticalAlignment="Top" Width="120" Height="20" DisplayMemberPath="ime" SelectedValuePath="autorID"  SelectedValue="{Binding autorID}"/>
+        <ComboBox Name="cbIzlozba"  HorizontalAlignment="Left" Margin="150,170,0,0"  VerticalAlignment="Top" Width="120" Height="20" DisplayMemberPath="nazivIzlozbe" SelectedValuePath="izlozbaID"  SelectedValue="{Binding izlozbaID}"/>
+        <ComboBox Name="cbKategorije"  HorizontalAlignment="Left" Margin="150,200,0,0" VerticalAlignment="Top" Width="120" Height="20" DisplayMemberPath="nazivKategorije" SelectedValuePath="kategorijaID"  SelectedValue="{Binding kategorijaID}"/>
+        <Button x:Name="btnOtkazi" Content="Otkazi" HorizontalAlignment="Left" Margin="30,250,0,0" VerticalAlignment="Top" Click="btnOtkazi_Click"/>
+        <Button x:Name="btnSacuvaj" Content="Sacuvaj" HorizontalAlignment="Left" Margin="200,250,0,0" VerticalAlignment="Top" Click="btnSacuvaj_Click"/>
+       
+
+    </Grid>
+</Window>
