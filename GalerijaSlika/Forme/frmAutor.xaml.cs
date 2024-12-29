@@ -91,7 +91,6 @@ namespace GalerijaSlika.Forme
                 }
                 cmd.Parameters.Add("@ime", SqlDbType.NChar).Value = txtIme.Text;
                 cmd.Parameters.Add("@prezime", SqlDbType.NChar).Value = txtPrezime.Text;
-
                 cmd.Parameters.Add("@biografija", SqlDbType.NChar).Value = txtBiografija.Text;
                 
                 cmd.ExecuteNonQuery();
