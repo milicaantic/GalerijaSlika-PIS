@@ -30,6 +30,20 @@ namespace GalerijaSlika.Forme
             InitializeComponent();
             konekcija = kon.KreirajKonekciju();
             slikaID = id;
+            UcitajPadajuceListe();
+            if (slikaID.HasValue)
+            {
+                UcitajPodatkeSlike();
+            }
+            else
+            {
+                txtNazivSlike.Focus();
+            }
+
+            
+        }
+        private void UcitajPadajuceListe()
+        {
             try
             {
                 konekcija.Open();
@@ -43,7 +57,7 @@ namespace GalerijaSlika.Forme
 
                 string vratiIzlozbe = @"select izlozbaID,nazivIzlozbe from tbl_Izlozba";
                 SqlDataAdapter daIzlozba = new SqlDataAdapter(vratiIzlozbe, konekcija);
-                DataTable dtIzlozba= new DataTable();
+                DataTable dtIzlozba = new DataTable();
                 daIzlozba.Fill(dtIzlozba);
                 cbIzlozba.ItemsSource = dtIzlozba.DefaultView;
                 daIzlozba.Dispose();
@@ -69,16 +83,6 @@ namespace GalerijaSlika.Forme
                     konekcija.Close();
                 }
             }
-            if (slikaID.HasValue)
-            {
-                UcitajPodatkeSlike();
-            }
-            else
-            {
-                txtNazivSlike.Focus();
-            }
-
-            
         }
         private void UcitajPodatkeSlike()
         {

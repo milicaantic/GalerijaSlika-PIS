@@ -30,11 +30,24 @@ namespace GalerijaSlika.Forme
             InitializeComponent();
             konekcija = kon.KreirajKonekciju();
             izlozbaID = id;
+            UcitajPadajuceListe();
+            if (izlozbaID.HasValue)
+            {
+                UcitajPodatkeIzlozbe();
+            }
+            else
+            {
+                txtNazivIzlozbe.Focus();
+            }
+          
+        }
+        private void UcitajPadajuceListe()
+        {
             try
             {
                 konekcija.Open();
                 string vratiKustose = @"select kustosID,ime from tbl_Kustos";
-                SqlDataAdapter daKustosa = new SqlDataAdapter(vratiKustose,konekcija);
+                SqlDataAdapter daKustosa = new SqlDataAdapter(vratiKustose, konekcija);
                 DataTable dtKustosa = new DataTable();
                 daKustosa.Fill(dtKustosa);
                 cbKustos.ItemsSource = dtKustosa.DefaultView;
@@ -45,22 +58,13 @@ namespace GalerijaSlika.Forme
             {
                 MessageBox.Show("Nije popunjena padajuca lista", "Greska", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            finally 
+            finally
             {
                 if (konekcija != null)
                 {
                     konekcija.Close();
                 }
             }
-            if (izlozbaID.HasValue)
-            {
-                UcitajPodatkeIzlozbe();
-            }
-            else
-            {
-                txtNazivIzlozbe.Focus();
-            }
-          
         }
          private void UcitajPodatkeIzlozbe()
         {
@@ -73,11 +77,13 @@ namespace GalerijaSlika.Forme
 
                 if (reader.Read())
                 {
+                    
                     txtNazivIzlozbe.Text = reader["nazivIzlozbe"].ToString();
                     dpDatumPocetka.SelectedDate = DateTime.Parse(reader["datumPocetka"].ToString());
                     dpDatumZavrsetka.SelectedDate = DateTime.Parse(reader["datumZavrsetka"].ToString());
                     txtOpis.Text = reader["opis"].ToString();
-                    cbKustos.SelectedValue = reader["kustosID"];
+                    int kustosID = Convert.ToInt32(reader["kustosID"]);
+                    cbKustos.SelectedValue = kustosID;
                 }
             }
             catch (Exception ex)

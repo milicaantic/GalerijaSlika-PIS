@@ -30,6 +30,18 @@ namespace GalerijaSlika.Forme
             InitializeComponent();
             konekcija = kon.KreirajKonekciju();
             ulaznicaID = id;
+            UcitajPadajuceListe();
+            if (ulaznicaID.HasValue)
+            {
+                UcitajPodatkeUlaznice();
+            }
+            else
+            {
+                txtCena.Focus();
+            }
+        }
+        private void UcitajPadajuceListe()
+        {
             try
             {
                 konekcija.Open();
@@ -60,14 +72,6 @@ namespace GalerijaSlika.Forme
                 {
                     konekcija.Close();
                 }
-            }
-            if (ulaznicaID.HasValue)
-            {
-                UcitajPodatkeUlaznice();
-            }
-            else
-            {
-                txtCena.Focus();
             }
         }
         private void UcitajPodatkeUlaznice()

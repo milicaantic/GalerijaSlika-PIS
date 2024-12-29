@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GalerijaSlika.Forme"
         mc:Ignorable="d"
-        Title="Dodaj/Izmeni kustosa" Height="450" Width="800">
+        Title="Dodaj/Izmeni kustosa" Height="300" Width="400">
     <Grid>
         <Label Content="Ime:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,20,0,0"/>
         <Label Content="Prezime:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,50,0,0"/>

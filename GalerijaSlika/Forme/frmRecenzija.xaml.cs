@@ -30,6 +30,19 @@ namespace GalerijaSlika.Forme
             InitializeComponent();
             konekcija = kon.KreirajKonekciju();
             recenzijaID = id;
+              UcitajPadajuceListe();
+            if (recenzijaID.HasValue)
+            {
+                UcitajPodatkeRecenzije();
+            }
+            else
+            {
+                txtRecenzija.Focus();
+            }
+           
+        }
+        private void UcitajPadajuceListe()
+        {
             try
             {
                 konekcija.Open();
@@ -41,7 +54,7 @@ namespace GalerijaSlika.Forme
                 daKorisnika.Dispose();
                 dtKorisnika.Dispose();
 
-                
+
                 string vratiIzlozbe = @"select izlozbaID,nazivIzlozbe from tbl_Izlozba";
                 SqlDataAdapter daIzlozba = new SqlDataAdapter(vratiIzlozbe, konekcija);
                 DataTable dtIzlozba = new DataTable();
@@ -61,15 +74,6 @@ namespace GalerijaSlika.Forme
                     konekcija.Close();
                 }
             }
-            if (recenzijaID.HasValue)
-            {
-                UcitajPodatkeRecenzije();
-            }
-            else
-            {
-                txtRecenzija.Focus();
-            }
-           
         }
         private void UcitajPodatkeRecenzije()
         {
@@ -80,7 +84,7 @@ namespace GalerijaSlika.Forme
                 cmd.Parameters.AddWithValue("@id", recenzijaID);
                 SqlDataReader reader = cmd.ExecuteReader();
                     
-                        if (reader.Read())
+                      if (reader.Read())
                         {
                             txtRecenzija.Text = reader["textRecenzije"].ToString();
                             txtOcena.Text = reader["ocena"].ToString();

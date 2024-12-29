@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GalerijaSlika.Forme"
         mc:Ignorable="d"
-        Title="Dodaj/Izmeni izlozbu" Height="450" Width="800">
+        Title="Dodaj/Izmeni izlozbu" Height="300" Width="400">
     <Grid>
         <Label Content="Naziv izlozbe:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,20,0,0"/>
         <Label Content="Datum pocetka:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,50,0,0"/>
@@ -16,7 +16,7 @@
         <DatePicker  Name="dpDatumPocetka" HorizontalAlignment="Left" Margin="150,50,0,0" VerticalAlignment="Top" Width="120" Height="20"/>
         <DatePicker  Name="dpDatumZavrsetka" HorizontalAlignment="Left" Margin="150,80,0,0" VerticalAlignment="Top" Width="120" Height="20"/>
         <TextBox Name="txtOpis"  HorizontalAlignment="Left" Margin="150,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="20"/>
-        <ComboBox Name="cbKustos"  HorizontalAlignment="Left" Margin="150,140,0,0"  VerticalAlignment="Top" Width="120" Height="20" DisplayMemberPath="ime" SelectedValuePath="kustosID" SelectedValue="{Binding kustosID}"/>
+        <ComboBox Name="cbKustos"  HorizontalAlignment="Left" Margin="150,140,0,0"  VerticalAlignment="Top" Width="120" Height="20" DisplayMemberPath="ime" SelectedValuePath="kustosID"/>
         <Button x:Name="btnOtkazi" Content="Otkazi" HorizontalAlignment="Left" Margin="30,200,0,0" VerticalAlignment="Top" Click="btnOtkazi_Click"/>
         <Button x:Name="btnSacuvaj" Content="Sacuvaj" HorizontalAlignment="Left" Margin="200,200,0,0" VerticalAlignment="Top" Click="btnSacuvaj_Click"/>
     </Grid>
