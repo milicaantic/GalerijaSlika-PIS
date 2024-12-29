@@ -56,7 +56,7 @@ namespace GalerijaSlika.Forme
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Greška pri učitavanju podataka autora: " + ex.Message, "Greška", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Greška pri učitavanju podataka autora " + ex.Message, "Greška", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             finally
             {

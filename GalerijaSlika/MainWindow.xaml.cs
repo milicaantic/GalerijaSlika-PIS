@@ -150,9 +150,9 @@ namespace GalerijaSlika
                     cmd.Parameters.AddWithValue("@id", id);
                     cmd.ExecuteNonQuery();
                 }
-                catch(Exception ex)
+                catch
                 {
-                    MessageBox.Show("Greška pri brisanju: "+ex.Message, "Greška", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Postoje povezani podaci u drugim tabelama ", "Greška", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
                 finally
                 {
